@@ -1,0 +1,41 @@
+@use 'sass:color';
+
+%box-style {
+  width: 200px;
+  height: 200px;
+  font-size: 40px;
+  border: 5px solid #000;
+}
+
+@function get-bg-color($text-color){
+  $l:color.lightness($text-color);
+  $bg:$l;
+  $bs:color.complement($text-color);
+  // @debug $l;
+  @if $l >=70% {
+    $bg:darken($bs,30%)
+  }
+
+  @else if $l > 30% and $l < 70%{
+    $bg:$bs;
+  }
+
+  @else{
+    $bg:lighten($bs,30%)
+  }
+
+  @return $bg;
+}
+
+.box1{
+  @extend %box-style;
+  $c:rgb(214, 228, 13);
+  color: $c;
+  background: get-bg-color($c);
+}
+.box2{
+  @extend %box-style;
+  $c:#ddd;
+  color: $c;
+  background: get-bg-color($c);
+}
