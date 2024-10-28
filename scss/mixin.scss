@@ -1,0 +1,20 @@
+@mixin mx1($bg,$fs){
+    background: $bg;
+    font-size: $fs;
+    @content;
+}
+
+@mixin mx2($cls-name, $bg2){
+    .#{$cls-name}{
+        background-color:$bg2;
+    }
+}
+
+.cls{
+    @include mx1(#000,16px){
+        border: 10px solid salmon;
+    }
+}
+
+@include mx2('clss',blue);
+@include mx2('clss12',red);
