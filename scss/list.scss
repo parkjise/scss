@@ -1,0 +1,28 @@
+$primary-color:skyblue;
+
+$box-types:(
+	'big',
+	'md',
+	'sm'
+);
+
+$bgs:(
+	'red',
+	'green',
+	'blue'
+);
+.box{
+	background-color: $primary-color;
+	// .box-#{nth($box-types,3)}{
+	// 	font-size: 32px;
+	// }
+
+	$i:1;
+	@each $bt in $box-types{
+		.box-#{$bt}{
+			font-size: #{2 - 0.3 * $i}em;
+			background: nth($bgs,$i);
+		}
+		$i: $i + 1
+	}
+}
