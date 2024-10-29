@@ -18,3 +18,37 @@
 
 @include mx2('clss',blue);
 @include mx2('clss12',red);
+
+@mixin flex($ishorizontal:true,$directionalArrangement:start,$alignItems:start,$gap:0){
+	display:flex;
+	@if $ishorizontal == true{
+		flex-direction: row;
+	}@else{
+		flex-direction: column;
+	}
+	@if $directionalArrangement == 'start'{
+		justify-content: flex-start;
+	}@else if($directionalArrangement == 'center'){
+		justify-content: center;
+	}@else if($directionalArrangement == 'end'){
+		justify-content: flex-end;
+	}@else{
+		justify-content:flex-start;
+	}
+	@if $alignItems == 'start'{
+		align-items: flex-start;
+	}@else if($alignItems == 'center'){
+		align-items: center;
+	}@else if($alignItems == 'end'){
+		align-items: flex-end;
+	}@else{
+		align-items:flex-start;
+	}
+
+	gap:$gap
+}
+
+.flex{
+	@include flex(true,center,center,20px);
+	height:100%;
+}
