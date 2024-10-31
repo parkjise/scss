@@ -1,0 +1,54 @@
+$device-type: (
+  "phone": 1000px,
+  "tablet": 1200px,
+  "desktop": 1400px,
+);
+
+@mixin mq($dt) {
+  $breakpoint: map-get($device-type, $dt);
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+header {
+  h1 {
+    font-size: 64px;
+    color: #000;
+    @include mq("desktop") {
+      font-size: 56px;
+    }
+    @include mq("tablet") {
+      font-size: 30px;
+      color: #0000ff;
+    }
+    @include mq("phone") {
+      font-size: 16px;
+      color: #ff0000;
+    }
+  }
+}
+
+$icon-types: (
+  "r": #ff0000,
+  "g": #00ff00,
+  "b": #0000ff,
+);
+
+h1 {
+  color: map-get($icon-types, "g");
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+}
+@each $k, $v in $icon-types {
+  .icon-#{$k}::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: $v;
+  }
+}
