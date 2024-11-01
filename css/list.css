@@ -1,0 +1,15 @@
+.box {
+  background-color: skyblue;
+}
+.box .box-big {
+  font-size: 1.7em;
+  background: red;
+}
+.box .box-md {
+  font-size: 1.4em;
+  background: green;
+}
+.box .box-sm {
+  font-size: 1.1em;
+  background: blue;
+}

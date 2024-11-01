@@ -1,0 +1,54 @@
+header h1 {
+  font-size: 64px;
+  color: #000;
+}
+@media (max-width: 1400px) {
+  header h1 {
+    font-size: 56px;
+  }
+}
+@media (max-width: 1200px) {
+  header h1 {
+    font-size: 30px;
+    color: #0000ff;
+  }
+}
+@media (max-width: 1000px) {
+  header h1 {
+    font-size: 16px;
+    color: #ff0000;
+  }
+}
+
+h1 {
+  color: #00ff00;
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon-r::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #ff0000;
+}
+
+.icon-g::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #00ff00;
+}
+
+.icon-b::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #0000ff;
+}
