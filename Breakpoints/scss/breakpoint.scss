@@ -1,1 +1,27 @@
 @use "./partials/mixin";
+header {
+	h1 {
+		font-size: 40px;
+		@include mixin.mq-breakpoint-down(lg) {
+			font-size: 100px;
+			background: rgb(24, 114, 187);
+			color: #fff;
+		}
+		@include mixin.mq-breakpoint-up(md) {
+			font-size: 64px;
+			background: rgb(204, 188, 43);
+			color: #fff;
+		}
+	}
+	nav {
+		font-size: 24px;
+		font-weight: 700;
+		background: #ccc;
+		padding: 20px;
+		@include mixin.mq-breakpoint-down(sm) {
+			font-size: 16px;
+			background: rgb(204, 35, 170);
+			color: #fff;
+		}
+	}
+}
