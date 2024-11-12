@@ -6,45 +6,67 @@
 // Extra extra large	xxl	    ≥  1400px
 
 $breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
 );
 
 // min-width 이상 구간
 @mixin mq-breakpoint-up($bp) {
-  $min-value: map-get($breakpoints, $bp);
-  @if $bp == xs {
-    @content;
-  } @else {
-    @media screen and (min-width: $min-value) {
-      @content;
-    }
-  }
+	$min-value: map-get($breakpoints, $bp);
+	@if $bp == xs {
+		@content;
+	} @else {
+		@media screen and (min-width: $min-value) {
+			@content;
+		}
+	}
+}
+// max-width 이상 구간
+@mixin mq-breakpoint-down($bp) {
+	$max-value: 0px;
+	@if $bp == xs {
+		@error 'Break XS isn\ available.';
+		@content;
+	} @else {
+		$max-value: map-get($breakpoints, $bp) - 0.02px;
+	}
+	@media screen and (max-width: $max-value) {
+		@content;
+	}
 }
 
-// max-width 이하 구간
-@mixin mq-breakpoint-up($bp) {
-  $min-value: map-get($breakpoints, $bp);
-  $max-value: 0px;
-  @if $bp == xs {
-    $max-value: map-get($breakpoints, sm) - 0.02px;
-    @media screen and (max-width: $max-value) {
-      @content;
-    }
-  } @else if $bp == xxl {
-    $min-value: map-get($breakpoints, xxl) - 0.02px;
-    @media screen and (min-width: $min-value) {
-      @content;
-    }
-  } @else {
-    $bp-next: map-get($breakpoints-next, $bp);
-    $max-value: map-get($breakpoints, $bp-next) - 0.02px;
-    @media screen and (min-width: $min-value) and (max-width: $max-value) {
-      @content;
-    }
-  }
+// 해당 breakpoint 구간
+@mixin mq-breakpoint-only($bp) {
+	$min-value: map-get($breakpoints, $bp);
+	$max-value: 0px;
+	@if $bp == xs {
+		$max-value: map-get($breakpoints, sm) - 0.02px;
+		@media screen and (max-width: $max-value) {
+			@content;
+		}
+	} @else if $bp == xxl {
+		$min-value: map-get($breakpoints, xxl) - 0.02px;
+		@media screen and (min-width: $min-value) {
+			@content;
+		}
+	} @else {
+		$bp-next: map-get($breakpoints-next, $bp);
+		$max-value: map-get($breakpoints, $bp-next) - 0.02px;
+		@media screen and (min-width: $min-value) and (max-width: $max-value) {
+			@content;
+		}
+	}
+}
+
+// 두 breakpoint 사이 구간
+@mixin mq-breakpoint-between($bp-min, $bp-max) {
+	$min-value: map-get($breakpoints, $bp-min);
+	$max-value: map-get($breakpoints, $bp-max) - 0.02px;
+	@media screen and (min-width: $min-value) and (max-width: $max-value) {
+		@content;
+	}
 }
