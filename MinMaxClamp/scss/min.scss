@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+}
+
+#min {
+  font-size: min(
+    2vw,
+    50px
+  ); // 두 인자중에 작은 값을 반환 고정된 값을 넘지 않도록 한다
+}
+#max {
+  font-size: max(
+    2vw,
+    50px
+  ); // 두 인자중에 큰 값을 반환 고정된 값을 넘지 않도록 한다
+}
+#clamp {
+  font-size: clamp(40px, 6vw, 90px); //
+  border: clamp(1px, 2vw, 30px) solid #000;
+}
+
+h1 {
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  background: rgb(10, 28, 80);
+  font-size: 72px;
+}
+
+section {
+  padding: 50px;
+}
+#info-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+}
+dl {
+  border: 1px solid #000;
+  padding: 10px;
+  dt {
+    font-size: 16px;
+    display: inline-block;
+    width: 50px;
+  }
+  dd {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-flex;
+    width: calc(100% - 90px);
+    margin-top: 10px;
+  }
+}

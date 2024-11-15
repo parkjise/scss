@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+}
+
+header:has(h1:hover) {
+  background-color: #000;
+  color: #fff;
+}
+
+section:has(p) {
+  background-color: #a04444;
+}
+
+section:has(*:hover) *:not(:hover) {
+  background-color: rgb(94, 143, 126);
+}
+
+section {
+  --w: 200px;
+  --h: 200px;
+  width: var(--w);
+  width: var(--h);
+}
+
+section:has(*:hover) {
+  --w: 100px;
+  --h: 100px;
+}

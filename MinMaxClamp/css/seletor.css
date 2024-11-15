@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*
+CSS 명시도
+
+인라인 스타일 1000
+Id 100
+클래스,가상클래스 10 :hover
+태그요소,가상요소 ::before ::after 1점
+!important 최우선
+*/
+p {
+  font-size: 32px;
+}
+
+article p,
+section p,
+div p {
+  color: blue;
+}
+
+/*:is,:where*/
+:is(article, section, div) p {
+  color: red;
+}
+
+/*:is,:where*/
+:where(article, section, div) p {
+  color: orange;
+}
