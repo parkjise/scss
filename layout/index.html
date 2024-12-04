@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCSS: Layouts</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+
+  <!-- S: page-wrapper -->
+  <div id="page-wrapper" class="container">
+
+    <!-- S: header -->
+    <header id="main-header" class="container">
+
+      <div id="main-header__brand" class="container">
+
+        <h1 id="logo" class="content">
+          <a href="#">D</a>
+        </h1>
+
+      </div>
+
+      <nav id="main-header__nav" class="container">
+        <ul class="container">
+          <li class="container">
+            <a href="#" class="content">Menu 00</a>
+            <ul class="container">
+              <li class="container"><a href="#" class="content">Menu 00</a></li>
+              <li class="container"><a href="#" class="content">Menu 01</a></li>
+              <li class="container"><a href="#" class="content">Menu 02</a></li>
+              <li class="container"><a href="#" class="content">Menu 03</a></li>
+            </ul>
+          </li>
+          <li class="container"><a href="#" class="content">Menu 01</a></li>
+          <li class="container"><a href="#" class="content">Menu 02</a></li>
+          <li class="container"><a href="#" class="content">Menu 03</a></li>
+        </ul>
+      </nav>
+
+      <div id="main-header__xtras" class="container">
+        <p class="content">xtras</p>
+      </div>
+    </header>
+    <!-- E: header -->
+
+    <!-- S: main -->
+    <main id="main" class="container">
+      <section id="hero" class="container">
+        <p>메인 이미지</p>
+      </section>
+
+      <section class="main__row">
+        <section id="articles" class="container">
+          <!-- S: article 단일 내용 요소들이 결합된 컨텐츠그룹 - 내용에 가깝다-->
+          <article class="content">
+            <h2>아티클 타이틀</h2>
+            <ul>
+              <li>아티클1</li>
+              <li>아티클1</li>
+              <li>아티클1</li>
+            </ul>
+          </article>
+          <article class="content">
+            <h2>아티클 타이틀</h2>
+            <ul>
+              <li>아티클1</li>
+              <li>아티클1</li>
+              <li>아티클1</li>
+            </ul>
+          </article>
+        </section>
+        <section id="gallery" class="container">
+          <h2>갤러리</h2>
+          <article class="gallery__article content">
+            <p>썸네일</p>
+            <div>
+              <h3>제목</h3>
+              <p>내용</p>
+            </div>
+          </article>
+        </section>
+      </section>
+
+    </main>
+    <!-- E: main -->
+
+    <!-- S: footer -->
+    <footer id="footer" class="container">
+      <p class="content">footer copyright</p>
+    </footer>
+    <!-- E: footer -->
+  </div>
+  <!-- E: page-wrapper -->
+
+</body>
+
+</html>

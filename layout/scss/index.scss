@@ -1,0 +1,19 @@
+@use './globals/reset';
+
+// 레이아웃
+// @use './layouts/layout-type-0';
+@use './layouts/layout-type-1';
+
+// 내용요소들
+@use './elements/_elements';
+
+.container {
+  margin: 5px;
+  padding: 5px;
+  border: 5px solid blue;
+}
+
+.content {
+  border: 2px dashed #555;
+  background: pink;
+}
